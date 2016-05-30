@@ -92,6 +92,7 @@ class Validate_helper {
         {
             return FALSE;
         }
+
         if ($compare == 'min')
         {
             return ($val <= mb_strlen($str));

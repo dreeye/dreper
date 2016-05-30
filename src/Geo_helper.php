@@ -21,7 +21,7 @@ class Geo_helper {
             $vertices[] = $this->pointStringToCoordinates($vertex); 
         }
  
-        // 坐标是否在定点
+        // 坐标是否在顶点
         if ($this->pointOnVertex == true and $this->pointOnVertex($point, $vertices) == true) {
             return "vertex";
         }
