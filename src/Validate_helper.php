@@ -95,11 +95,11 @@ class Validate_helper {
 
         if ($compare == 'min')
         {
-            return ($val <= mb_strlen($str));
+            return (mb_strlen($str) <= $val);
         }
         else
         {
-            return ($val >= mb_strlen($str));
+            return (mb_strlen($str) >= $val);
         }
     }
 
@@ -134,7 +134,7 @@ class Validate_helper {
      */
     public function isDate($date, $format = 'Y-m-d H:i:s')
     {
-        $d = DateTime::createFromFormat($format, $date);
+        $d = \DateTime::createFromFormat($format, $date);
         return $d && $d->format($format) == $date;
     } 
 
