@@ -55,6 +55,18 @@ class String_helper {
         }
     }
 
-
+   /** 
+    * 兼容key没有双引括起来的JSON字符串解析
+    * @param String $str JSON字符串
+    * @param boolean $mod true:Array,false:Object
+    * @return Array/Object
+    */
+    function ext_json_decode($str, $mode=FALSE)
+    {
+      if (preg_match('/\w:/', $str)) {
+         $str = preg_replace('/(\w+):/is', '"$1":', $str);
+      }
+      return json_decode($str, $mode);
+    }
 
 }
