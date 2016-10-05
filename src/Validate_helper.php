@@ -6,7 +6,7 @@ class Validate_helper {
 
 
     // 验证手机号
-    public function isMobile($str)  
+    public static function isMobile($str)  
     { 
        $str = preg_replace(array('/\+86/', '/-/', '/ /'), array('', '', ''), $str);
        if (preg_match('/^\d{11}$/', $str) == 1) 
@@ -23,7 +23,7 @@ class Validate_helper {
      * @param   string
      * @return  bool
      */
-    public function isAlpha($str)
+    public static function isAlpha($str)
     {
         return ctype_alpha($str);
     }
@@ -34,7 +34,7 @@ class Validate_helper {
      * @param   string
      * @return  bool
      */
-    public function isAlphaNumeric($str)
+    public static function isAlphaNumeric($str)
     {
         return ctype_alnum((string) $str);
     }
@@ -46,7 +46,7 @@ class Validate_helper {
      * @param   string
      * @return  bool
      */
-    public function isAlphaNumericSpaces($str)
+    public static function isAlphaNumericSpaces($str)
     {
         return (bool) preg_match('/^[A-Z0-9 ]+$/i', $str);
     }
@@ -57,7 +57,7 @@ class Validate_helper {
      * @param   string
      * @return  bool
      */
-    public function isAlphaDash($str)
+    public static function isAlphaDash($str)
     {
         return (bool) preg_match('/^[a-z0-9_-]+$/i', $str);
     }
@@ -68,7 +68,7 @@ class Validate_helper {
      * @param   string
      * @return  bool
      */
-    public function isEmail($str)
+    public static function isEmail($str)
     {
         if (function_exists('idn_to_ascii') && $atpos = strpos($str, '@'))
         {
@@ -86,7 +86,7 @@ class Validate_helper {
      * @param   string
      * @return  bool
      */
-    public function compareLength($str, $val, $compare='min')
+    public static function compareLength($str, $val, $compare='min')
     {
         if ( ! is_numeric($val))
         {
@@ -110,7 +110,7 @@ class Validate_helper {
      * @param   string
      * @return  bool
      */
-    public function isInteger($str)
+    public static function isInteger($str)
     {
         return (bool) preg_match('/^[\-+]?[0-9]+$/', $str);
     }
@@ -121,7 +121,7 @@ class Validate_helper {
      * @param   string
      * @return  bool
      */
-    public function isNumeric($str)
+    public static function isNumeric($str)
     {
         return (bool) preg_match('/^[\-+]?[0-9]*\.?[0-9]+$/', $str);
     }
@@ -132,7 +132,7 @@ class Validate_helper {
      * @return bool
      *
      */
-    public function isDate($date, $format = 'Y-m-d H:i:s')
+    public static function isDate($date, $format = 'Y-m-d H:i:s')
     {
         $d = \DateTime::createFromFormat($format, $date);
         return $d && $d->format($format) == $date;

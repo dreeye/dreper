@@ -22,7 +22,7 @@ class String_helper {
      * md5: 根据 md5() 生成的一个加密的随机数字（长度固定为 32）
      * sha1: 根据 sha1() 生成的一个加密的随机数字（长度固定为 40）
      */
-    public function randomString($type = 'alnum', $len = 8)
+    public static function randomString($type = 'alnum', $len = 8)
     {
         switch ($type)
         {
@@ -61,7 +61,7 @@ class String_helper {
     * @param boolean $mod true:Array,false:Object
     * @return Array/Object
     */
-    function ext_json_decode($str, $mode=FALSE)
+    public static function ext_json_decode($str, $mode=FALSE)
     {
       if (preg_match('/\w:/', $str)) {
          $str = preg_replace('/(\w+):/is', '"$1":', $str);
