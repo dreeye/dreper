@@ -1,6 +1,6 @@
 <?php
 
-namespace Dreeye\Helper;
+namespace Dreper;
 
 class Validate_helper {
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Dreeye\Helper;
+namespace Dreper;
 
 class Geo_helper {
 
