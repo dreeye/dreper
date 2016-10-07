@@ -1,9 +1,10 @@
 {
-    "name": "dreeye/helper",
+    "name": "dreeye/dreper",
     "description": "PHP常用功能包",
     "keywords": [
         "helper",
         "helpers",
+        "php-library",
         "php-helpers"
     ],
     "license": "MIT",
@@ -18,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Dreeye\\Helper\\": "src/"
+            "Dreper\\": "src/"
         }
     }
 }
